@@ -19,4 +19,8 @@ public class Game {
         }
     }
 
+    public void exit() {
+        output.println("Exit Game");
+        System.exit(0);
+    }
 }
