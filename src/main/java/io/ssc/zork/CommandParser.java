@@ -1,5 +1,7 @@
 package io.ssc.zork;
 
+import io.ssc.zork.command.Command;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -9,7 +11,8 @@ public class CommandParser {
 
     private List<String> allCommandsSortedByLength = new ArrayList<>();
     {
-        CommandFactory.getAllCommands().sort((o1, o2) -> o2.length() - o1.length());
+        allCommandsSortedByLength.addAll(CommandFactory.getAllCommands());
+        allCommandsSortedByLength.sort((o1, o2) -> o2.length() - o1.length());
     }
 
     private String matchInputToCommand(String input){
@@ -23,11 +26,18 @@ public class CommandParser {
 
     public List<String> parse(String stringInput){
         String  cleanedInput = stringInput.trim();
-        String command = matchInputToCommand(cleanedInput);
-        String argString = cleanedInput.substring(command.length());
+        String cmd = matchInputToCommand(cleanedInput);
+        Command command = CommandFactory.get(cmd);
+        if (command.numArgs() > 0){
+            // TODO: check for space later
+            // TODO: handle invalid number of argument
+            String argString = cleanedInput.substring(cmd.length() + 1);
+            System.out.println(argString);
+            return Arrays.asList(cmd, argString);
+        } else {
+            return Arrays.asList(cmd);
+        }
 
-        String[] strings = stringInput.trim().split(" ");
-        return Arrays.asList(strings);
     }
 
 }

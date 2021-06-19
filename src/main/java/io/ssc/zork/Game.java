@@ -1,5 +1,7 @@
 package io.ssc.zork;
 
+import io.ssc.zork.command.Command;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,13 +16,18 @@ public class Game {
             Scanner in = new Scanner(System.in);
             String s = in.nextLine();
             List<String> words = commandParser.parse(s);
-
-            output.println(s);
+            Command command = CommandFactory.get(words.get(0));
+            if (command != null){
+                command.execute(this, words.subList(1,words.size()));
+            }
         }
     }
 
+    public GameOutput getOutput() {
+        return output;
+    }
+
     public void exit() {
-        output.println("Exit Game");
         System.exit(0);
     }
 }
