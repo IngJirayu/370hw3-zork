@@ -21,7 +21,7 @@ public class CommandParser {
                 return command;
             }
         }
-        return null;
+        return "notValidCommand";
     }
 
     public List<String> parse(String stringInput){
