@@ -29,15 +29,12 @@ public class CommandParser {
         String cmd = matchInputToCommand(cleanedInput);
         Command command = CommandFactory.get(cmd);
         if (command.numArgs() > 0){
-            // TODO: check for space later
-            // TODO: handle invalid number of argument
             String argString = cleanedInput.substring(cmd.length() + 1);
             System.out.println(argString);
             return Arrays.asList(cmd, argString);
         } else {
             return Arrays.asList(cmd);
         }
-
     }
 
 }
