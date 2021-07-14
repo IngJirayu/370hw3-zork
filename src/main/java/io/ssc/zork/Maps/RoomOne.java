@@ -22,7 +22,7 @@ public class RoomOne{
         library.setExits(null, null, null, corridor);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         RoomOne one = new RoomOne();
         System.out.println(one.currentRoom.nextRoom("north").nextRoom("east").getName());
     }

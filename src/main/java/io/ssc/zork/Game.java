@@ -37,6 +37,7 @@ public class Game {
             if (command != null){
                 command.execute(this, words.subList(1,words.size()));
             }
+            System.out.println("-------------------------------");
             System.out.println("You are now in the " + currentRoom.getName());
             System.out.println("-------------------------------");
         }

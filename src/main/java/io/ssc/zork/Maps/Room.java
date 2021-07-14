@@ -1,12 +1,11 @@
 package io.ssc.zork.Maps;
 
+import io.ssc.zork.Game;
+import io.ssc.zork.command.NotValidCommand;
 import io.ssc.zork.inventory.Items;
 
 import java.net.PortUnreachableException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Room {
 
@@ -18,32 +17,12 @@ public class Room {
 
     public Room(String roomName){
         this.roomName = roomName;
-
     }
 
     public String getName() {
         return roomName;
     }
 
-    public void setExit(char direction, Room r) throws Exception{
-        String dir= "";
-        switch (direction) {
-            case 'E':
-                dir = "east";
-                break;
-            case 'W':
-                dir = "west";
-                break;
-            case 'S':
-                dir = "south";
-                break;
-            case 'N':
-                dir = "north";
-                break;
-            default:
-                throw new Exception("Invalid Direction");
-        }
-    }
         public void setExits(Room north, Room east, Room south, Room west)
         {
             if(north != null)
@@ -65,8 +44,7 @@ public class Room {
         return returnString;
     }
 
-    public Room nextRoom(String direction)
-    {
+    public Room nextRoom(String direction){
         return (Room)exits.get(direction);
     }
 
