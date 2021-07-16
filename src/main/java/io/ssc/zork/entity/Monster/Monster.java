@@ -6,5 +6,10 @@ public interface Monster {
 
     boolean isAlive();
 
+    String name();
+
+    String description();
+
+    int getHealth();
 
 }

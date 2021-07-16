@@ -13,4 +13,19 @@ public class Broly implements Monster{
     public boolean isAlive() {
         return health > 0;
     }
+
+    @Override
+    public String name() {
+        return "BROLY!!";
+    }
+
+    @Override
+    public String description() {
+        return "DO NOT ENGAGE! WAY TO KILL: UNKNOWN YET";
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
 }

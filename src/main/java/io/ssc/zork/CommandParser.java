@@ -29,8 +29,8 @@ public class CommandParser {
         String cmd = matchInputToCommand(cleanedInput);
         Command command = CommandFactory.get(cmd);
         if (command.numArgs() > 0){
-            String argString = cleanedInput.substring(cmd.length() + 1);
-            return Arrays.asList(cmd, argString);
+           String argString = cleanedInput.substring(cmd.length() + 1);
+           return Arrays.asList(cmd, argString);
         } else {
             return Arrays.asList(cmd);
         }

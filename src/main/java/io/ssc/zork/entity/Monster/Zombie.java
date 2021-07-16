@@ -14,5 +14,18 @@ public class Zombie implements Monster{
         return health > 0;
     }
 
+    @Override
+    public String name() {
+        return "zombie";
+    }
 
+    @Override
+    public String description() {
+        return "They aren't infectious, you could literally win using ur fist";
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
 }
