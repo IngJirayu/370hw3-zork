@@ -1,17 +1,15 @@
 package io.ssc.zork.Maps;
 
-import io.ssc.zork.Game;
-import io.ssc.zork.command.NotValidCommand;
+import io.ssc.zork.entity.Monster.Monster;
 import io.ssc.zork.inventory.Items;
 
-import java.net.PortUnreachableException;
 import java.util.*;
 
 public class Room {
 
     private Items item;
+    private Monster monster;
     private String roomName;
-    private String description;
     private ArrayList<Items> itemList;
     private HashMap<String, Room> exits = new HashMap<>();
 
@@ -48,6 +46,13 @@ public class Room {
         return (Room)exits.get(direction);
     }
 
+    public void setMonster(Monster monster) {
+        this.monster = monster;
+    }
+
+    public Monster getMonster() {
+        return monster;
+    }
 }
 
 

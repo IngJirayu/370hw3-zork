@@ -3,6 +3,7 @@ package io.ssc.zork;
 import io.ssc.zork.Maps.Room;
 import io.ssc.zork.Maps.RoomOne;
 import io.ssc.zork.command.Command;
+import io.ssc.zork.entity.Player;
 
 import java.util.List;
 import java.util.Scanner;
@@ -24,7 +25,16 @@ public class Game {
         return currentRoom;
     }
 
+    //player setup
+    Player player = new Player();
+
+    public Player getPlayer(){
+        return player;
+    }
+
+
     public void run(){
+        player.setHealth(10);
         System.out.println("Welcome to zork game implemented by ING");
         System.out.println("Type help to see all commands");
         System.out.println("-----------------------------");
@@ -37,9 +47,6 @@ public class Game {
             if (command != null){
                 command.execute(this, words.subList(1,words.size()));
             }
-            System.out.println("-------------------------------");
-            System.out.println("You are now in the " + currentRoom.getName());
-            System.out.println("-------------------------------");
         }
     }
 

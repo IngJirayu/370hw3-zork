@@ -1,6 +1,12 @@
 package io.ssc.zork.inventory;
 
-public class Items {
-    private String name;
+import io.ssc.zork.Game;
+
+public interface Items {
+
+
+    int AttackPower();
+
+    void use(Game game);
 
 }

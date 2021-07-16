@@ -2,9 +2,8 @@ package io.ssc.zork.command;
 
 import io.ssc.zork.Game;
 import io.ssc.zork.Maps.Room;
-import io.ssc.zork.Maps.RoomOne;
+import io.ssc.zork.entity.Player;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GoCommand implements Command{
@@ -22,6 +21,7 @@ public class GoCommand implements Command{
     @Override
     public void execute(Game game, List<String> args) {
         Room checkRoom = game.getCurrentRoom().nextRoom(args.get(0));
+        Player player = game.getPlayer();
         switch (args.get(0)){
             case ("north"):
             case ("east"):
@@ -34,7 +34,9 @@ public class GoCommand implements Command{
             System.out.println("Try again with new direction");
         } else {
             System.out.println("Walking to the " + game.getCurrentRoom().nextRoom(args.get(0)).getName() + "....");
+            System.out.println("You have reached the " + game.getCurrentRoom().nextRoom(args.get(0)).getName());
             game.setCurrentRoom(game.getCurrentRoom().nextRoom(args.get(0)));
+            player.setHealth(player.getHealth() + 10);
         }
     }
 }
