@@ -37,7 +37,12 @@ public class AttackWithCommand implements Command{
                 if (!game.getPlayer().isAlive()){
                     System.out.println("You ded bro");
                     System.out.println("YOU LOST");
-                    game.exit();
+                    System.out.println("Restarting game...........");
+                    System.out.println("******************");
+                    Game game1 = new Game();
+                    game1.run();
+                }else {
+                    System.out.println("Your health: " + game.getPlayer().getHealth());
                 }
             }
         }

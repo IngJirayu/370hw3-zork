@@ -1,7 +1,6 @@
 package io.ssc.zork.command;
 
 import io.ssc.zork.Game;
-import io.ssc.zork.inventory.Item;
 
 import java.util.List;
 
