@@ -2,12 +2,10 @@ package io.ssc.zork.inventory;
 
 import io.ssc.zork.Game;
 
-public class Stardust implements Items{
-
-    private String name = "stardust";
+public class Stardust implements Item {
 
     public String getName() {
-        return name;
+        return "stardust";
     }
 
     @Override

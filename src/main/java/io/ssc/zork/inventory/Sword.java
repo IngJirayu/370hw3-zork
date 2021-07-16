@@ -2,13 +2,10 @@ package io.ssc.zork.inventory;
 
 import io.ssc.zork.Game;
 
-public class Sword implements Items{
+public class Sword implements Item {
 
-    private String name = "sword";
-
-
-    String getName() {
-        return name;
+    public String getName() {
+        return "sword";
     }
 
     @Override

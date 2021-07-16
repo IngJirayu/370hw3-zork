@@ -1,16 +1,16 @@
 package io.ssc.zork.Maps;
 
 import io.ssc.zork.entity.Monster.Monster;
-import io.ssc.zork.inventory.Items;
+import io.ssc.zork.inventory.Item;
 
 import java.util.*;
 
 public class Room {
 
-    private Items item;
+    private Item item;
     private Monster monster;
     private String roomName;
-    private ArrayList<Items> itemList;
+    private ArrayList<Item> itemList;
     private HashMap<String, Room> exits = new HashMap<>();
 
     public Room(String roomName){
@@ -52,6 +52,14 @@ public class Room {
 
     public Monster getMonster() {
         return monster;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }
 

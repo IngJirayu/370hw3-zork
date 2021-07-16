@@ -2,6 +2,7 @@ package io.ssc.zork.command;
 
 import io.ssc.zork.Game;
 import io.ssc.zork.entity.Monster.Monster;
+import io.ssc.zork.inventory.Item;
 
 import java.util.List;
 
@@ -18,8 +19,8 @@ public class InfoCommand implements Command{
 
     @Override
     public void execute(Game game, List<String> args) {
-        System.out.println("Your health: " + game.getPlayer().getHealth() + "/" + game.getPlayer().getMAX_HEALTH());
-        System.out.println("You are now in the " + game.getCurrentRoom().getName());
+        System.out.println("Health: " + game.getPlayer().getHealth() + "/" + game.getPlayer().getMAX_HEALTH());
+        System.out.println("Room: " + game.getCurrentRoom().getName());
 
         Monster monster = game.getCurrentRoom().getMonster();
         if (monster != null){
@@ -31,6 +32,15 @@ public class InfoCommand implements Command{
             }
         } else {
             System.out.println("...No monster here...");
+        }
+
+        Item item = game.getCurrentRoom().getItem();
+        if (item != null){
+            System.out.println("ITEM SPOTTED!");
+            System.out.println(item.getName());
+            System.out.println(item.getName() + "'s attack power: " + item.AttackPower());
+        } else {
+            System.out.println("...No Weapon here...");
         }
 
     }

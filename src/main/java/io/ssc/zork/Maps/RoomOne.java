@@ -3,6 +3,9 @@ package io.ssc.zork.Maps;
 import io.ssc.zork.entity.Monster.Broly;
 import io.ssc.zork.entity.Monster.Stormtrooper;
 import io.ssc.zork.entity.Monster.Zombie;
+import io.ssc.zork.inventory.Spear;
+import io.ssc.zork.inventory.Stardust;
+import io.ssc.zork.inventory.Sword;
 
 public class RoomOne{
     Room patio = new Room("patio");
@@ -31,6 +34,11 @@ public class RoomOne{
         library.setMonster(new Zombie());
         locker.setMonster(new Stormtrooper());
         corridor.setMonster(new Stormtrooper());
+
+        //Items
+        patio.setItem(new Spear());
+        library.setItem(new Stardust());
+        corridor.setItem(new Sword());
     }
 
 
