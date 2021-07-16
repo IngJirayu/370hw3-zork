@@ -10,7 +10,6 @@ public class Room {
     private Item item;
     private Monster monster;
     private String roomName;
-    private ArrayList<Item> itemList;
     private HashMap<String, Room> exits = new HashMap<>();
 
     public Room(String roomName){
@@ -60,6 +59,13 @@ public class Room {
 
     public void setItem(Item item) {
         this.item = item;
+    }
+
+    public void itemReset(){
+        this.item = null;
+    }
+    public void killMonster(){
+        this.monster = null;
     }
 }
 

@@ -2,7 +2,7 @@ package io.ssc.zork.entity.Monster;
 
 public class Zombie implements Monster{
 
-    private int health = 9;
+    private int health = 35;
 
     @Override
     public int AttackPoint() {
@@ -21,11 +21,18 @@ public class Zombie implements Monster{
 
     @Override
     public String description() {
-        return "They aren't infectious, you could literally win using ur fist";
+        return "They aren't infectious but are hard to kill";
     }
 
     @Override
     public int getHealth() {
         return health;
     }
+
+    @Override
+    public void setHealth(int attackPoint) {
+        health = health - attackPoint;
+    }
+
+
 }

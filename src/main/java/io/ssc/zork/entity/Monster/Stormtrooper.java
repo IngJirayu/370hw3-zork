@@ -29,4 +29,8 @@ public class Stormtrooper implements Monster{
     public int getHealth() {
         return health;
     }
+    @Override
+    public void setHealth(int attackPoint) {
+        health = health - attackPoint;
+    }
 }
