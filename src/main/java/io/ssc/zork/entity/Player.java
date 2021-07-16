@@ -43,8 +43,10 @@ public class Player{
             return true;
         }
     }
-
     public void attacked(int ap){
         health -= ap;
+    }
+    public void removeItem(String item){
+        items.remove(item);
     }
 }

@@ -18,7 +18,8 @@ public class CommandFactory {
             GoCommand.class,
             InfoCommand.class,
             AttackWithCommand.class,
-            TakeCommand.class
+            TakeCommand.class,
+            DropCommand.class
     );
 
     private static final Map<String, Command> COMMAND_MAP = new HashMap<>();
